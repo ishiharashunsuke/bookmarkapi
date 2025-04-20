@@ -1,9 +1,16 @@
 package com.example.bookmarkapi.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CreateBookmarkRequest {
+
+    @NotBlank(message = "Title is requireď")
     private String title;
+
+    @NotBlank(message = "URL is required")
     private String url;
     private String description;
+    @NotBlank(message = "Category is requireď")
     private String category;
 
 

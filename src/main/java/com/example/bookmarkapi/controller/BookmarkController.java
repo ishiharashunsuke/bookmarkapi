@@ -10,6 +10,8 @@ import com.example.bookmarkapi.dto.CreateBookmarkRequest;
 import com.example.bookmarkapi.model.Bookmark;
 import com.example.bookmarkapi.repository.BookmarkRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/bookmarks")
 public class BookmarkController {
@@ -26,7 +28,7 @@ public class BookmarkController {
     }
 
     @PostMapping
-    public ResponseEntity<Bookmark> createBookmark(@RequestBody CreateBookmarkRequest req){
+    public ResponseEntity<Bookmark> createBookmark(@Valid @RequestBody CreateBookmarkRequest req){
         Bookmark bookmark = new Bookmark();
 
         bookmark.setTitle(req.getTitle());
